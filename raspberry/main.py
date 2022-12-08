@@ -7,6 +7,7 @@
 ########################################################################
 ## IMPORTS
 ########################################################################
+from msilib.schema import CheckBox
 import sys
 import os
 from PySide2 import *
@@ -20,8 +21,12 @@ from ui_interface import *
 # IMPORT Custom widgets
 from Custom_Widgets.Widgets import *
 ########################################################################
+#import RPi.GPIO
+########################################################################
+import RPi.GPIO as IO
 
-
+sensor_btn_1 = IO.input(5)
+sensor_btn_2 = IO.input(6)
 ########################################################################
 ## MAIN WINDOW CLASS
 ########################################################################
@@ -79,9 +84,37 @@ class MainWindow(QMainWindow):
 
         ## SHOW ==> MAIN WINDOW
         ########################################################################
+        self.UiComponents()
         self.show()
-        ## ==> END ##
+
+    def UiComponents(self):
+
+        self.ui.checkBox.setChecked(False)
+        self.ui.checkBox_2.setChecked(False)
+        self.ui.checkBox_3.setChecked(False)
+        self.ui.checkBox_4.setChecked(False)
+
+        sensor_btn_1.clicked.connect(self.buttonClicked)
+        sensor_btn_2.clicked.connect(self.buttonClicked)
+
+        self.statusBar()
+
+    def buttonClicked(self):
+        sender = self.sender()
+        self.statusBar().showMessage(sender.text() + ' была нажата')
+
+        if sensor_btn_1 == 1:
+            self.ui.checkBox.setChecked(True)
+        else:
+            self.ui.checkBox.setChecked(False)
         
+        if sensor_btn_2 == 1:
+            self.ui.checkBox_2.setChecked(True)
+        else:
+            self.ui.checkBox_2.setChecked(False)
+        ## ==> END ##
+    
+    
 
 
 ########################################################################
