@@ -11,6 +11,7 @@
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
+from PySide2.QtWebEngineWidgets import *
 
 import icons_rc
 
@@ -69,7 +70,7 @@ class Ui_MainWindow(object):
         self.btn_page_home.setSizePolicy(sizePolicy1)
         self.btn_page_home.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(185, 0, 3);\n"
-"	border-radius: 10px\n"
+"	border-radius: 10px;\n"
 "}")
         icon = QIcon()
         icon.addFile(u"icons/home.svg", QSize(), QIcon.Normal, QIcon.Off)
@@ -163,48 +164,9 @@ class Ui_MainWindow(object):
         self.stackedWidget = QStackedWidget(self.frame_2)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setEnabled(True)
-        self.page_fourteen_learn = QWidget()
-        self.page_fourteen_learn.setObjectName(u"page_fourteen_learn")
-        self.stackedWidget.addWidget(self.page_fourteen_learn)
-        self.page_theerteen_learn = QWidget()
-        self.page_theerteen_learn.setObjectName(u"page_theerteen_learn")
-        self.stackedWidget.addWidget(self.page_theerteen_learn)
-        self.page_twelve_learn = QWidget()
-        self.page_twelve_learn.setObjectName(u"page_twelve_learn")
-        self.stackedWidget.addWidget(self.page_twelve_learn)
-        self.page_eleven_learn = QWidget()
-        self.page_eleven_learn.setObjectName(u"page_eleven_learn")
-        self.stackedWidget.addWidget(self.page_eleven_learn)
-        self.page_ten_learn = QWidget()
-        self.page_ten_learn.setObjectName(u"page_ten_learn")
-        self.stackedWidget.addWidget(self.page_ten_learn)
-        self.page_nine_learn = QWidget()
-        self.page_nine_learn.setObjectName(u"page_nine_learn")
-        self.stackedWidget.addWidget(self.page_nine_learn)
-        self.page_eight_learn = QWidget()
-        self.page_eight_learn.setObjectName(u"page_eight_learn")
-        self.stackedWidget.addWidget(self.page_eight_learn)
-        self.page_seven_learn = QWidget()
-        self.page_seven_learn.setObjectName(u"page_seven_learn")
-        self.stackedWidget.addWidget(self.page_seven_learn)
-        self.page_six_learn = QWidget()
-        self.page_six_learn.setObjectName(u"page_six_learn")
-        self.stackedWidget.addWidget(self.page_six_learn)
-        self.page_five_learn = QWidget()
-        self.page_five_learn.setObjectName(u"page_five_learn")
-        self.stackedWidget.addWidget(self.page_five_learn)
-        self.page_four_learn = QWidget()
-        self.page_four_learn.setObjectName(u"page_four_learn")
-        self.stackedWidget.addWidget(self.page_four_learn)
-        self.page_three_learn = QWidget()
-        self.page_three_learn.setObjectName(u"page_three_learn")
-        self.stackedWidget.addWidget(self.page_three_learn)
-        self.page_two_learn = QWidget()
-        self.page_two_learn.setObjectName(u"page_two_learn")
-        self.stackedWidget.addWidget(self.page_two_learn)
-        self.test_1 = QWidget()
-        self.test_1.setObjectName(u"test_1")
-        self.test_1.setStyleSheet(u"QCheckBox{\n"
+        self.learn_page = QWidget()
+        self.learn_page.setObjectName(u"learn_page")
+        self.learn_page.setStyleSheet(u"QPushButton{\n"
 "	color: white;\n"
 "	background:rgb(85, 170, 255);\n"
 "	height: 35px;\n"
@@ -216,126 +178,16 @@ class Ui_MainWindow(object):
 "	color:white;\n"
 "	font-size: 40px;\n"
 "}")
-        self.horizontalLayout_6 = QHBoxLayout(self.test_1)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.frame_4 = QFrame(self.test_1)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_5 = QVBoxLayout(self.frame_4)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.label_2 = QLabel(self.frame_4)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setStyleSheet(u"QCheckBox{\n"
-"	color: white;\n"
-"	background:rgb(85, 170, 255);\n"
-"	height: 35px;\n"
-" 	border-radius:10px;\n"
-"	font-size:15px;\n"
-"}\n"
-"\n"
-"QLabel{\n"
-"	color:white;\n"
-"	font-size: 40px;\n"
-"}")
-
-        self.verticalLayout_5.addWidget(self.label_2)
-
-        self.checkBox_4 = QCheckBox(self.frame_4)
-        self.checkBox_4.setObjectName(u"checkBox_4")
-        self.checkBox_4.setCheckable(True)
-        self.checkBox_4.setChecked(False)
-
-        self.verticalLayout_5.addWidget(self.checkBox_4)
-
-        self.checkBox_3 = QCheckBox(self.frame_4)
-        self.checkBox_3.setObjectName(u"checkBox_3")
-
-        self.verticalLayout_5.addWidget(self.checkBox_3)
-
-        self.checkBox_2 = QCheckBox(self.frame_4)
-        self.checkBox_2.setObjectName(u"checkBox_2")
-
-        self.verticalLayout_5.addWidget(self.checkBox_2)
-
-        self.checkBox = QCheckBox(self.frame_4)
-        self.checkBox.setObjectName(u"checkBox")
-
-        self.verticalLayout_5.addWidget(self.checkBox)
-
-
-        self.horizontalLayout_6.addWidget(self.frame_4)
-
-        self.stackedWidget.addWidget(self.test_1)
-        self.page_one_learn = QWidget()
-        self.page_one_learn.setObjectName(u"page_one_learn")
-        self.page_one_learn.setStyleSheet(u"QPushButton{\n"
-"	color: white;\n"
-"	background:rgb(85, 170, 255);\n"
-"	height: 35px;\n"
-" 	border-radius:10px;\n"
-"	font-size:15px;\n"
-"}\n"
-"\n"
-"QLabel{\n"
-"	color:white;\n"
-"	font-size: 40px;\n"
-"}")
-        self.verticalLayout_2 = QVBoxLayout(self.page_one_learn)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.scrollArea_2 = QScrollArea(self.page_one_learn)
-        self.scrollArea_2.setObjectName(u"scrollArea_2")
-        self.scrollArea_2.setWidgetResizable(True)
-        self.scrollAreaWidgetContents_2 = QWidget()
-        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1094, 679))
-        self.verticalLayout_4 = QVBoxLayout(self.scrollAreaWidgetContents_2)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.textBrowser = QTextBrowser(self.scrollAreaWidgetContents_2)
-        self.textBrowser.setObjectName(u"textBrowser")
-
-        self.verticalLayout_4.addWidget(self.textBrowser)
-
-        self.test_one = QPushButton(self.scrollAreaWidgetContents_2)
-        self.test_one.setObjectName(u"test_one")
-
-        self.verticalLayout_4.addWidget(self.test_one)
-
-        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
-
-        self.verticalLayout_2.addWidget(self.scrollArea_2)
-
-        self.stackedWidget.addWidget(self.page_one_learn)
-        self.home = QWidget()
-        self.home.setObjectName(u"home")
-        self.home.setStyleSheet(u"QPushButton{\n"
-"	color: white;\n"
-"	background:rgb(85, 170, 255);\n"
-"	height: 35px;\n"
-" 	border-radius:10px;\n"
-"	font-size:15px;\n"
-"}\n"
-"\n"
-"QLabel{\n"
-"	color:white;\n"
-"	font-size: 40px;\n"
-"}")
-        self.gridLayout = QGridLayout(self.home)
+        self.gridLayout = QGridLayout(self.learn_page)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.scrollArea = QScrollArea(self.home)
+        self.scrollArea = QScrollArea(self.learn_page)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1094, 679))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1098, 687))
         self.verticalLayout_3 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label = QLabel(self.scrollAreaWidgetContents)
-        self.label.setObjectName(u"label")
-        self.label.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_3.addWidget(self.label)
-
         self.one_learn = QPushButton(self.scrollAreaWidgetContents)
         self.one_learn.setObjectName(u"one_learn")
         self.one_learn.setLayoutDirection(Qt.RightToLeft)
@@ -425,7 +277,54 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.scrollArea, 0, 0, 1, 1)
 
-        self.stackedWidget.addWidget(self.home)
+        self.stackedWidget.addWidget(self.learn_page)
+        self.home_2 = QWidget()
+        self.home_2.setObjectName(u"home_2")
+        self.home_2.setStyleSheet(u"QPushButton{\n"
+"	color: white;\n"
+"	background:rgb(85, 170, 255);\n"
+"	height: 35px;\n"
+" 	border-radius:10px;\n"
+"	font-size:15px;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"	color:white;\n"
+"	font-size: 40px;\n"
+"}")
+        self.horizontalLayout_6 = QHBoxLayout(self.home_2)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.widget = QWidget(self.home_2)
+        self.widget.setObjectName(u"widget")
+        self.verticalLayout_2 = QVBoxLayout(self.widget)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.label = QLabel(self.widget)
+        self.label.setObjectName(u"label")
+        self.label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_2.addWidget(self.label)
+
+        self.widget_2 = QWidget(self.widget)
+        self.widget_2.setObjectName(u"widget_2")
+        self.horizontalLayout_7 = QHBoxLayout(self.widget_2)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.btn_learn = QPushButton(self.widget_2)
+        self.btn_learn.setObjectName(u"btn_learn")
+
+        self.horizontalLayout_7.addWidget(self.btn_learn)
+
+        self.btn_test = QPushButton(self.widget_2)
+        self.btn_test.setObjectName(u"btn_test")
+
+        self.horizontalLayout_7.addWidget(self.btn_test)
+
+
+        self.verticalLayout_2.addWidget(self.widget_2)
+
+
+        self.horizontalLayout_6.addWidget(self.widget)
+
+        self.stackedWidget.addWidget(self.home_2)
 
         self.horizontalLayout_3.addWidget(self.stackedWidget)
 
@@ -460,7 +359,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(14)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -473,18 +372,6 @@ class Ui_MainWindow(object):
         self.minimize_window_button.setText("")
         self.restore_window_button.setText("")
         self.close_window_button.setText("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0430\u043a \u0442\u0435\u0431\u044f \u0437\u043e\u0432\u0443\u0442?", None))
-        self.checkBox_4.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.checkBox_3.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">12</span></p></body></html>", None))
-        self.test_one.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0439\u0442\u0438 \u0442\u0435\u0441\u0442", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0443\u044e\u0449\u0438\u0439 \u0432\u0430\u0441 \u0440\u0430\u0437\u0434\u0435\u043b", None))
         self.one_learn.setText(QCoreApplication.translate("MainWindow", u"1. \u041f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u0433\u0438\u0434\u0440\u0430\u0432\u043b\u0438\u043a\u0438. \u0424\u0438\u0437\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043e\u0441\u043d\u043e\u0432\u044b \u0433\u0438\u0434\u0440\u0430\u0432\u043b\u0438\u043a\u0438. \u0413\u0438\u0434\u0440\u0430\u0432\u043b\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0441\u0438\u043c\u0432\u043e\u043b\u044b \u0438 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u044b. \u0412\u0438\u0434\u044b \u0438 \u0441\u0432\u043e\u0439\u0441\u0442\u0432\u0430 \u0433\u0438\u0434\u0440\u0430\u0432\u043b\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0436\u0438\u0434\u043a\u043e\u0441\u0442\u0435\u0439.", None))
         self.two_learn.setText(QCoreApplication.translate("MainWindow", u"2.\u0425\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438 \u043e\u0431\u044a\u0435\u043c\u043d\u043e\u0433\u043e \u043d\u0435\u0440\u0435\u0433\u0443\u043b\u0438\u0440\u0443\u0435\u043c\u043e\u0433\u043e \u043d\u0430\u0441\u043e\u0441\u0430.", None))
         self.three_learn.setText(QCoreApplication.translate("MainWindow", u"3. \u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438 \u0433\u0438\u0434\u0440\u043e\u0446\u0438\u043b\u0438\u043d\u0434\u0440\u0430 \u0441 \u043e\u0434\u043d\u043e\u0441\u0442\u043e\u0440\u043e\u043d\u043d\u0438\u043c \u0448\u0442\u043e\u043a\u043e\u043c. \u0414\u0430\u0432\u043b\u0435\u043d\u0438\u0435.", None))
@@ -499,5 +386,8 @@ class Ui_MainWindow(object):
         self.twelve_learn.setText(QCoreApplication.translate("MainWindow", u"12. \u0420\u0435\u0434\u0443\u043a\u0446\u0438\u043e\u043d\u043d\u044b\u0439 \u043a\u043b\u0430\u043f\u0430\u043d.", None))
         self.theerteen_learn.setText(QCoreApplication.translate("MainWindow", u"13. \u041a\u043e\u043c\u043f\u043e\u043d\u043e\u0432\u043a\u0430 \u0438 \u0440\u0430\u0431\u043e\u0442\u0430 \u0434\u0438\u0444\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0439 \u0441\u0445\u0435\u043c\u044b.", None))
         self.fourteen_learn.setText(QCoreApplication.translate("MainWindow", u"14. \u0423\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c\u044b\u0435 \u043e\u0431\u0440\u0430\u0442\u043d\u044b\u0435 \u043a\u043b\u0430\u043f\u0430\u043d\u0430.", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0443\u044e\u0449\u0438\u0439 \u0432\u0430\u0441 \u0440\u0430\u0437\u0434\u0435\u043b", None))
+        self.btn_learn.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0443\u0447\u0435\u043d\u0438\u0435", None))
+        self.btn_test.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435", None))
     # retranslateUi
 

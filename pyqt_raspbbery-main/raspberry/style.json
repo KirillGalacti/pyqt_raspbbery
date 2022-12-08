@@ -1,8 +1,8 @@
 {
 	"QMainWindow":[
 		{
-			"tittle":"My New Tittle",
-			"icon":":/icons/icons/github.svg",
+			"tittle":"Learn",
+			"icon":"",
 			"frameless": true,
 			"transluscentBg": true,
 			"sizeGrip": "size_grip",
