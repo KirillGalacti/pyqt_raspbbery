@@ -6,6 +6,16 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter import scrolledtext
 
+import RPi.GPIO as IO
+
+IO.setwarnings(False)
+IO.setmode(IO.BCM)
+
+IO.setup(26, IO.IN)
+IO.setup(19, IO.IN)
+IO.setup(13, IO.IN)
+IO.setup(6, IO.IN)
+IO.setup(5, IO.IN)
 
 ################################
 # Загрузка теста и его парсинг
@@ -56,10 +66,6 @@ print('Кол-во верных ответов:', flags.sum())
 ################################################################
 # Выбор режима (Рандомный порядок вопросов vs обычный порядок).
 ################################################################
-
-# # # функция закрытия окна при выборе рандомного режима
-# # def accept():
-# #     window.destroy()
 Text_q_dict = {}
 for i, q in enumerate(Text_q):
     Text_q_dict[i] = q
@@ -67,28 +73,6 @@ for i, q in enumerate(Text_q):
 np1 = np.arange(len(Text_q))
 order_list = np1.tolist()
 random.shuffle(order_list)
-
-
-# # box = Checkbutton(window, text='Включить случайный порядок?',
-# #                   variable=RandomState,
-# #                   font=('Arial Bold', 10),
-# #                   relief='solid',
-# #                   bd='1'
-# #                   )
-# # box['command'] = accept
-# # box.place(x=12, y=20)
-
-# window.mainloop()
-
-
-#######################################
-# Получение списка с порядком вопросов.
-#######################################
-
-
-
-# Если выбран рандомный режим, то перемешиваем порядок вопросов
-    
 
 
 #########################
@@ -134,10 +118,43 @@ class Block:
         self.check4 = tk.IntVar()
         self.box4 = Checkbutton(text='4', variable=self.check4, font=('Arial Bold', 12))
 
+    
+        def buttonPressed(channel):#Присвоение CheckBox 0 или 1 взависимости от нажатой кнопки
+            if IO.input(5) == 1:
+                print("1")
+                self.check1.set(1)
+                self.check2.set(0)
+                self.check3.set(0)
+                self.check4.set(0)
+            elif IO.input(13) == 1:
+                print("2")
+                self.check1.set(0)
+                self.check2.set(1)
+                self.check3.set(0)
+                self.check4.set(0)
+            elif IO.input(6) == 1:
+                print("3")
+                self.check1.set(0)
+                self.check2.set(0)
+                self.check3.set(1)
+                self.check4.set(0)
+            elif IO.input(19) == 1:
+                print("4")
+                self.check1.set(0)
+                self.check2.set(0)
+                self.check3.set(0)
+                self.check4.set(1)
+                
+        IO.add_event_detect(5, IO.RISING, callback = buttonPressed)
+        IO.add_event_detect(13, IO.RISING, callback = buttonPressed)
+        IO.add_event_detect(6, IO.RISING, callback = buttonPressed)
+        IO.add_event_detect(19, IO.RISING, callback = buttonPressed)
+
+        
         # Инициализация лэйблов и кнопок
         self.mark = tk.Label(window, text='Выберите ответы: ', font=('Arial Bold', 12), fg='Green', bg='white')
 
-        self.ButNext = Button(text='Следующий', font=('Arial Bold', 12), command = lambda:([self.show_res(), self.next_q()]))  # кнопка перехода в состояние "СМЕНА ВОПРОСА"
+        self.ButNext = Button(text='Следующий', font=('Arial Bold', 12), command = lambda:[self.show_res(), self.next_q()])  # кнопка перехода в состояние "СМЕНА ВОПРОСА"
 
         # Позиционирование виджитов
         self.quest.place(x=50, y=25)
@@ -165,7 +182,6 @@ class Block:
         answers[1] = self.check2.get()
         answers[2] = self.check3.get()
         answers[3] = self.check4.get()
-
 
         # подсвечиваем истинно верные ответы зелёным цветом (задний фон чекбоксов)
         for i, box in enumerate([self.box1, self.box2, self.box3, self.box4]):
@@ -226,7 +242,7 @@ class Block:
 #################
 
 window = tk.Tk()
-window.title('Конструктор тестов (VladislavSoren)')
+window.title('Контроль')
 window.resizable(width=False, height=False)
 window.geometry('720x480+400+100')
 window['bg'] = 'grey'

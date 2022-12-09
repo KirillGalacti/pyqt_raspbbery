@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 ########################################################################
 ## SPINN DESIGN CODE
 # YOUTUBE: (SPINN TV) https://www.youtube.com/spinnTv
